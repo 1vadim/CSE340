@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/organizations">Organizations</a></li>
-            <li><a href="/projects">Projects</a></li>
-        </ul>
-    </nav>
+  <nav>
+  <div class="nav-container">
+    <div class="logo">Service Network</div>
+
+    <button class="menu-toggle" aria-label="Open menu">
+      ☰
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/organizations">Organizations</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/categories">Categories</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
