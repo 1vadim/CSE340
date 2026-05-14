@@ -4,7 +4,14 @@
   <h1><%= title %></h1>
   <p>Here are a few of our partner organizations:</p>
   <ul>
-    <li>
+      <% organizations.forEach(organization => { %>
+      <li><img src="/images/<%= organization.logo_filename %>" alt="<%= organization.name %> logo">
+        <strong><%= organization.name %></strong>: 
+        <p><%= organization.description %></p> 
+        <p>e-mail: <%= organization.contact_email %></p>
+      </li>
+            <% }); %>   
+    <!-- <li>
       <img
         src="/images/brightfuture-logo.png"
         alt="BrightFuture Builders logo"
@@ -21,7 +28,7 @@
         src="/images/unityserve-logo.png"
         alt="UnityServe Volunteers logo"
       /><strong>UnityServe Volunteers</strong>: hello@unityserve.org
-    </li>
+    </li> -->
   </ul>
 </main>
 
