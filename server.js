@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 import { testConnection } from "./src/models/db.js";
 import { getAllOrganizations } from "./src/models/organizations.js";
+import { getAllProjects } from "./src/models/projects.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,8 +61,10 @@ app.get("/organizations", async (req, res) => {
 });
 
 app.get("/projects", async (req, res) => {
+  const projects = await getAllProjects();
+  // console.log(projects);
   const title = "Service Projects";
-  res.render("projects", { title });
+  res.render("projects", { title, projects });
 });
 
 app.get("/categories", async (req, res) => {

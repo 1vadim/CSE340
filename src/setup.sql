@@ -18,3 +18,34 @@ VALUES
 ('GreenHarvest Growers', 'An urban farming collective promoting food sustainability and education in local neighborhoods.', 'contact@greenharvest.org', 'greenharvest-logo.png'),
 ('UnityServe Volunteers', 'A volunteer coordination group supporting local charities and service initiatives.', 'hello@unityserve.org', 'unityserve-logo.png');
 
+CREATE TABLE service_projects (
+    project_id SERIAL PRIMARY KEY,
+    organization_id INTEGER NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    location VARCHAR(255),
+    date DATE NOT NULL,
+    FOREIGN KEY (organization_id) REFERENCES organization(organization_id) ON DELETE CASCADE
+);
+
+INSERT INTO service_projects (organization_id, title, description, location, date) VALUES
+-- Org 1
+(1, 'Park Cleanup', 'Cleaning local park', 'Vienna Central Park', '2026-06-01'),
+(1, 'Tree Planting', 'Planting trees in urban areas', 'Vienna Woods', '2026-06-05'),
+(1, 'River Cleanup', 'Cleaning the river bank', 'Danube River', '2026-06-10'),
+(1, 'Recycling Workshop', 'Teaching recycling', 'Community Center', '2026-06-12'),
+(1, 'Bike Repair Help', 'Helping fix bikes', 'City Square', '2026-06-15'),
+
+-- Org 2
+(2, 'Food Drive', 'Collecting food for needy', 'Food Bank Vienna', '2026-06-02'),
+(2, 'Soup Kitchen', 'Serving hot meals', 'Downtown Shelter', '2026-06-06'),
+(2, 'Clothing Donation', 'Collecting clothes', 'Community Hall', '2026-06-09'),
+(2, 'Elderly Support', 'Helping seniors', 'Senior Center', '2026-06-13'),
+(2, 'Charity Run', 'Fundraising run', 'City Park', '2026-06-18'),
+
+-- Org 3
+(3, 'Tutoring Program', 'Helping students', 'Local School', '2026-06-03'),
+(3, 'Coding Workshop', 'Teaching coding', 'Tech Hub', '2026-06-07'),
+(3, 'Library Help', 'Organizing books', 'City Library', '2026-06-11'),
+(3, 'Language Exchange', 'Practice languages', 'Cafe Vienna', '2026-06-14'),
+(3, 'Career Mentoring', 'Helping youth careers', 'University Hall', '2026-06-20');
