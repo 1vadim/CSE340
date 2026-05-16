@@ -49,3 +49,42 @@ INSERT INTO service_projects (organization_id, title, description, location, dat
 (3, 'Library Help', 'Organizing books', 'City Library', '2026-06-11'),
 (3, 'Language Exchange', 'Practice languages', 'Cafe Vienna', '2026-06-14'),
 (3, 'Career Mentoring', 'Helping youth careers', 'University Hall', '2026-06-20');
+
+CREATE TABLE categories (
+    category_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+INSERT INTO categories (name) VALUES
+('Environmental'),
+('Educational'),
+('Community Service'),
+('Health and Wellness');
+
+CREATE TABLE project_categories (
+    project_id INTEGER NOT NULL,
+    category_id INTEGER NOT NULL,
+    PRIMARY KEY (project_id, category_id),
+    FOREIGN KEY (project_id) REFERENCES service_projects(project_id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE
+);
+
+INSERT INTO project_categories (project_id, category_id) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 2),
+(5, 2),
+(6, 3),
+(7, 3),
+(8, 3),
+(9, 4),
+(10, 4),
+(11, 4),
+(12, 4),
+(13, 4),
+(14, 1),
+(15, 2);
+
+SELECT * FROM categories;
+SELECT * FROM project_categories;
