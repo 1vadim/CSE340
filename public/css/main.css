@@ -119,7 +119,10 @@ img {
 
 /* Organization logos */
 li img {
-  width: 45px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
   vertical-align: middle;
   margin-right: 12px;
 }
@@ -170,6 +173,7 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--text);
 }
 
 /* ===== Desktop ===== */
@@ -192,7 +196,7 @@ footer {
     background: white;
 
     flex-direction: column;
-    align-items: center;   /* центрирование */
+    align-items: center;   
     text-align: center;
 
     display: none;
@@ -213,4 +217,51 @@ footer {
   .nav-links.active {
     display: flex;
   }
+}
+
+main a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  margin: 0.2rem;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.category-tag:hover {
+  transform: translateY(-1px);
+}
+
+.category-tag:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a,
+button {
+  transition: all 0.2s ease;
 }

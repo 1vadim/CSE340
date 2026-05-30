@@ -23,6 +23,27 @@
       <strong>Partner Organization:</strong> 
       <a href="/organization/<%= project.organization_id %>"><%= project.organization_name %></a>
     </p>
+
+    <p class="categories">
+  <strong>Categories:</strong>
+
+  <% if (categories.length > 0) { %>
+
+    <% categories.forEach(category => { %>
+      <a
+        href="/category/<%= category.category_id %>"
+        class="category-tag"
+      >
+        <%= category.name %>
+      </a>
+    <% }) %>
+
+  <% } else { %>
+
+    No categories assigned.
+
+  <% } %>
+</p>
   </article>
 </main>
 
