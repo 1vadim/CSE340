@@ -293,3 +293,124 @@ button {
     background-color: #d1ecf1;
     border-color: #bee5eb;
 }
+
+form {
+  max-width: 500px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; 
+  gap: 5px; 
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+  width: 100%; 
+  box-sizing: border-box; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit; 
+}
+
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical; 
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+}
+
+
+form button[type="submit"] {
+  width: 100%; 
+  padding: 12px;
+  background-color: #0066cc; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+form button[type="submit"]:hover {
+  background-color: #0052a3; 
+}
+
+
+form button[type="submit"]:active {
+  transform: scale(0.98); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-block; 
+  text-decoration: none; 
+  padding: 10px 20px;
+  background-color: #0066cc; 
+  color: white !important; 
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: #0052a3;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: #4ed185;
+}
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap; 
+}

@@ -19,6 +19,8 @@
             <li>No service projects found for this organization.</li>
         <% } %>
     </ul>
-    <p><a href="/edit-organization/<%= organizationDetails.organization_id %>">Edit Organization</a></p>
+<p>
+  <a href="/edit-organization/<%= organizationDetails.organization_id %>" class="btn">Edit Organization</a>
+</p>
 </main>
 <%- include('partials/footer') %>
