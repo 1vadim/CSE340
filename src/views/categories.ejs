@@ -5,18 +5,22 @@
   <h1><%= title %></h1>
 
   <ul>
-        <% categories.forEach(category => { %>
-      <li>
-  <a href="/category/<%= category.category_id %>">
-    <%= category.name %>
-  </a>
-</li>
+      <% categories.forEach(category => { %>
+      
+      <li class="category-list-item">
+        
+        <a href="/category/<%= category.category_id %>">
+          <%= category.name %>
+        </a>
+        
+        <a href="/edit-category/<%= category.category_id %>" class="btn">Edit</a>
+        
+      </li>
     <% }) %>
-    <!-- <li>Environmental</li>
-    <li>Educational</li>
-    <li>Community Service</li>
-    <li>Health and Wellness</li> -->
   </ul>
+  <div class="action-bar">
+  <a href="/new-category" class="btn btn-success">Add New Category</a>
+</div>
 </main>
 
 <%- include('partials/footer') %>

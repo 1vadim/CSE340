@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<main>
+  <h1><%= title %></h1>
+
+  <form action="/edit-category/<%= categoryDetails.category_id %>" method="POST">
+    
+    <div class="form-group">
+      <label for="name">Category Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        maxlength="100"
+        value="<%= categoryDetails.name %>"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn">Update Category</button>
+  </form>
+  <form action="/delete-category/<%= categoryDetails.category_id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this category? This action cannot be undone.');" style="display: inline-block;">
+  <button type="submit" class="btn btn-danger">Delete Category</button>
+</form>
+</main>
+<%- include('partials/footer') %>

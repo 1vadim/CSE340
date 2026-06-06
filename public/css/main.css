@@ -100,6 +100,12 @@ li {
   transition: 0.2s;
 }
 
+.category-list-item {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+}
+
 li:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -413,4 +419,13 @@ form button[type="submit"]:active {
   gap: 10px;
   margin: 15px 0;
   flex-wrap: wrap; 
+}
+
+.btn.btn-danger {
+  background-color: #dc3545 !important; 
+  color: white !important;
+}
+
+.btn.btn-danger:hover {
+  background-color: #bd2130 !important;
 }
