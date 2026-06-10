@@ -23,10 +23,11 @@
 
     <% } %>
   </ul>
+    <% if (user && user.role_name === 'admin') { %>
   <div class="action-buttons" style="margin: 15px 0;">
   <a href="/edit-category/<%= category.category_id %>" class="btn">Edit Category Name</a>
 </div>
-
+<% } %>
 </main>
 
 <%- include('partials/footer') %>

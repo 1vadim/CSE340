@@ -46,8 +46,10 @@
 </p>
   </article>
 <div class="action-buttons">
+  <% if (user && user.role_name === 'admin') { %>
   <a href="/project/<%= project.project_id %>/assign-categories" class="btn btn-secondary">Edit Categories</a>
   <a href="/edit-project/<%= project.project_id %>" class="btn">Edit Project Details</a>
+  <% } %>
 </div>
 </main>
 
