@@ -32,6 +32,16 @@ import {
   processDeleteCategory
 } from "./controllers/categories.js";
 
+import {
+  showUserRegistrationForm,
+  processUserRegistrationForm,
+  showLoginForm,
+  processLoginForm,
+  processLogout,
+  showDashboard,
+  requireLogin
+} from "./controllers/users.js";
+
 import { testErrorPage } from "./controllers/errors.js";
 
 
@@ -68,5 +78,12 @@ router.post("/edit-category/:id", categoryValidation, processEditCategoryForm);
 router.post("/delete-category/:id", processDeleteCategory);
 // error-handling routes
 router.get("/test-error", testErrorPage);
-
+// User registration routes
+router.get('/register', showUserRegistrationForm);
+router.post('/register', processUserRegistrationForm);
+// User login routes
+router.get('/login', showLoginForm);
+router.post('/login', processLoginForm);
+router.get('/logout', processLogout);
+router.get('/dashboard', requireLogin, showDashboard);
 export default router;
