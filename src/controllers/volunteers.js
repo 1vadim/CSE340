@@ -19,7 +19,7 @@ const removeVolunteerFromProject = async (req, res) => {
 
   req.flash("success", "Volunteer registration removed.");
 
-  res.redirect(`/project/${projectId}`);
+  res.redirect("/dashboard");
 };
 
 export { volunteerForProject, removeVolunteerFromProject };
