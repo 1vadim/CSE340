@@ -44,6 +44,11 @@ import {
   showUsersPage
 } from "./controllers/users.js";
 
+import {
+  volunteerForProject,
+  removeVolunteerFromProject,
+} from "./controllers/volunteers.js";
+
 import { testErrorPage } from "./controllers/errors.js";
 
 
@@ -108,4 +113,6 @@ router.post('/login', processLoginForm);
 router.get('/logout', processLogout);
 router.get('/dashboard', requireLogin, showDashboard);
 router.get("/users", requireRole("admin"), showUsersPage);
+router.get("/project/:id/volunteer", requireLogin, volunteerForProject);
+router.get(  "/project/:id/unvolunteer", requireLogin, removeVolunteerFromProject,);
 export default router;

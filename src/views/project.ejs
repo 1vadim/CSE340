@@ -44,6 +44,39 @@
 
   <% } %>
 </p>
+
+<% if (user) { %>
+
+<div class="volunteer-section">
+
+<% if (!volunteering) { %>
+
+<a
+  href="/project/<%= project.project_id %>/volunteer"
+  class="btn btn-success"
+>
+  Volunteer For This Project
+</a>
+
+<% } else { %>
+
+<p class="volunteer-status">
+  You are volunteering for this project.
+</p>
+
+<a
+  href="/project/<%= project.project_id %>/unvolunteer"
+  class="btn btn-danger"
+>
+  Remove Volunteer Registration
+</a>
+
+<% } %>
+
+</div>
+
+<% } %>
+
   </article>
 <div class="action-buttons">
   <% if (user && user.role_name === 'admin') { %>
